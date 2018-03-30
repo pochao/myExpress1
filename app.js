@@ -4,6 +4,13 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var mongoose = require('mongoose');
+var Task = require('./models/todoListModel');
+  
+// mongoose instance connection url connection
+mongoose.Promise = global.Promise;
+mongoose.connect('mongodb://:' + process.env.DBUSER + ':' + process.env.DBPASSWORD + '@ds015740.mlab.com:15740/my-first-test');
+
 
 var index = require('./routes/index');
 var users = require('./routes/users');
@@ -24,6 +31,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/users', users);
+
+var routes = require('./routes/todoListRoutes'); //importing route
+routes(app); //register the route
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
