@@ -6,10 +6,12 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var Task = require('./models/todoListModel');
-console.log('資料庫用戶: ' + process.env.DBUSER);
+console.log('資料庫密碼: ' + process.env.DBPASSWORD);
 // mongoose instance connection url connection
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://:' + process.env.DBUSER + ':' + process.env.DBPASSWORD + '@ds015740.mlab.com:15740/my-first-test');
+mongoose.connect('mongodb://:' + process.env.DBUSER + ':' + process.env.DBPASSWORD + '@ds015740.mlab.com:15740/my-first-test',function(err){
+  console.log(err);
+});
 
 
 //var index = require('./routes/index');
