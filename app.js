@@ -6,14 +6,14 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var Task = require('./models/todoListModel');
-  
+console.log('資料庫用戶: ' + process.env.DBUSER);
 // mongoose instance connection url connection
 mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://:' + process.env.DBUSER + ':' + process.env.DBPASSWORD + '@ds015740.mlab.com:15740/my-first-test');
 
 
-var index = require('./routes/index');
-var users = require('./routes/users');
+//var index = require('./routes/index');
+//var users = require('./routes/users');
 
 var app = express();
 
@@ -29,8 +29,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', index);
-app.use('/users', users);
+//app.use('/', index);
+//app.use('/users', users);
 
 var routes = require('./routes/todoListRoutes'); //importing route
 routes(app); //register the route
