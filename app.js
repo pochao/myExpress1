@@ -9,7 +9,6 @@ var Task = require('./models/todoListModel');
 
 // mongoose instance connection url connection
 mongoose.Promise = global.Promise;
-console.log('mongodb://:' + process.env.DBUSER + ':' + process.env.DBPASSWORD + '@ds015740.mlab.com:15740/my-first-test');
 mongoose.connect('mongodb://:' + process.env.DBUSER + ':' + process.env.DBPASSWORD + '@ds015740.mlab.com:15740/my-first-test',function(err){
   console.log(err);
 });

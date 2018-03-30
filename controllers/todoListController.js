@@ -2,18 +2,18 @@ var mongoose = require('mongoose');
 var Task = mongoose.model('Tasks');
 
 exports.list_all_tasks = function(req, res) {
-  var task = {
-      name: 'coding every day',
-      date: Date.now()
-  }
+  // var task = {
+  //     name: 'coding every day',
+  //     date: Date.now()
+  // }
   
-  res.json(task);
+  // res.json(task);
   
-  // Task.find({}, function(err, task) {
-  //   if (err)
-  //     res.send(err);
-  //   res.json(task);
-  // });
+  Task.find({}, function(err, task) {
+    if (err)
+      res.send(err);
+    res.json(task);
+  });
 };
 
 
