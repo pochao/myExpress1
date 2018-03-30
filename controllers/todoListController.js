@@ -6,11 +6,14 @@ exports.list_all_tasks = function(req, res) {
       name: 'coding every day',
       date: Date.now()
   }
-  Task.find({}, function(err, task) {
-    if (err)
-      res.send(err);
-    res.json(task);
-  });
+  
+  res.json(task);
+  
+  // Task.find({}, function(err, task) {
+  //   if (err)
+  //     res.send(err);
+  //   res.json(task);
+  // });
 };
 
 
