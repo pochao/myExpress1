@@ -8,11 +8,11 @@ var mongoose = require('mongoose');
 var Task = require('./models/todoListModel');
 
 // mongoose instance connection url connection
-//mongoose.Promise = global.Promise;
+mongoose.Promise = global.Promise;
 
-// mongoose.connect('mongodb://:ds015740.mlab.com:15740/my-first-test',{user: process.env.DBUSER, pass: process.env.DBPASSWORD},function(err){
-//   console.log(err);
-// });
+mongoose.connect('mongodb://:ds015740.mlab.com:15740/my-first-test',{user: process.env.DBUSER, pass: process.env.DBPASSWORD},function(err){
+  console.log(err);
+});
 // mongoose.connect('mongodb://:' + process.env.DBUSER + ':' + process.env.DBPASSWORD + '@ds015740.mlab.com:15740/my-first-test',function(err){
 //   console.log(err);
 // });
