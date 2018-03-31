@@ -14,7 +14,7 @@ mongoose.connect('mongodb://' + process.env.DBUSER + ':' + process.env.DBPASSWOR
   console.log(err);
 });
 
-//var index = require('./routes/index');
+var index = require('./routes/index');
 //var users = require('./routes/users');
 var routes = require('./routes/todoListRoutes'); //importing route
 routes(app); //register the route
@@ -33,7 +33,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-//app.use('/', index);
+app.use('/', index);
 //app.use('/users', users);
 
 // catch 404 and forward to error handler
