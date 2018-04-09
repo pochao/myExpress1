@@ -5,18 +5,268 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.12.4.min.js"></script>
 
+    <style type="text/css">
+      .navigation {
+        height: 70px;
+        background: #262626;
+      }
+      
+      .brand {
+        position: absolute;
+        padding-left: 20px;
+        float: left;
+        line-height: 70px;
+        text-transform: uppercase;
+        font-size: 1.4em;
+      }
+      .brand a,
+      .brand a:visited {
+        color: #ffffff;
+        text-decoration: none;
+      }
+      
+      .nav-container {
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+      
+      nav {
+        float: right;
+      }
+      nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      nav ul li {
+        float: left;
+        position: relative;
+      }
+      nav ul li a,
+      nav ul li a:visited {
+        display: block;
+        padding: 0 20px;
+        line-height: 70px;
+        background: #262626;
+        color: #ffffff;
+        text-decoration: none;
+      }
+      nav ul li a:hover,
+      nav ul li a:visited:hover {
+        background: #2581DC;
+        color: #ffffff;
+      }
+      nav ul li a:not(:only-child):after,
+      nav ul li a:visited:not(:only-child):after {
+        padding-left: 4px;
+        content: ' ▾';
+      }
+      nav ul li ul li {
+        min-width: 190px;
+      }
+      nav ul li ul li a {
+        padding: 15px;
+        line-height: 20px;
+      }
+      
+      .nav-dropdown {
+        position: absolute;
+        display: none;
+        z-index: 1;
+        box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+      }
+      
+      /* Mobile navigation */
+      .nav-mobile {
+        display: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: #262626;
+        height: 70px;
+        width: 70px;
+      }
+      
+      @media only screen and (max-width: 800px) {
+        .nav-mobile {
+          display: block;
+        }
+      
+        nav {
+          width: 100%;
+          padding: 70px 0 15px;
+        }
+        nav ul {
+          display: none;
+        }
+        nav ul li {
+          float: none;
+        }
+        nav ul li a {
+          padding: 15px;
+          line-height: 20px;
+        }
+        nav ul li ul li a {
+          padding-left: 30px;
+        }
+      
+        .nav-dropdown {
+          position: static;
+        }
+      }
+      @media screen and (min-width: 800px) {
+        .nav-list {
+          display: block !important;
+        }
+      }
+      #nav-toggle {
+        position: absolute;
+        left: 18px;
+        top: 22px;
+        cursor: pointer;
+        padding: 10px 35px 16px 0px;
+      }
+      #nav-toggle span,
+      #nav-toggle span:before,
+      #nav-toggle span:after {
+        cursor: pointer;
+        border-radius: 1px;
+        height: 5px;
+        width: 35px;
+        background: #ffffff;
+        position: absolute;
+        display: block;
+        content: '';
+        transition: all 300ms ease-in-out;
+      }
+      #nav-toggle span:before {
+        top: -10px;
+      }
+      #nav-toggle span:after {
+        bottom: -10px;
+      }
+      #nav-toggle.active span {
+        background-color: transparent;
+      }
+      #nav-toggle.active span:before, #nav-toggle.active span:after {
+        top: 0;
+      }
+      #nav-toggle.active span:before {
+        transform: rotate(45deg);
+      }
+      #nav-toggle.active span:after {
+        transform: rotate(-45deg);
+      }
+      
+      article {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 10px;
+      }
+    </style>
+    
     <title>Hello, world!</title>
   </head>
   <body>
-    <h1>Hello, world!</h1>
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <section class="navigation">
+      <div class="nav-container">
+        <div class="brand">
+          <a href="#!">法國香榭社區管理系統</a>
+        </div>
+        <nav>
+          <div class="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>
+          <ul class="nav-list">
+            <li>
+              <a href="#!">物業管理</a>
+              <ul class="nav-dropdown">
+                <li>
+                  <a href="#!">設施管理</a>
+                </li>
+                <li>
+                  <a href="#!">租賃管理</a>
+                </li>
+                <li>
+                  <a href="#!">事務管理</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#!">家庭照護</a>
+              <ul class="nav-dropdown">
+                <li>
+                  <a href="#!">健康照護</a>
+                </li>
+                <li>
+                  <a href="#!">育嬰托護</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#!">安全防災</a>
+              <ul class="nav-dropdown">
+                <li>
+                  <a href="#!">社區防範</a>
+                </li>
+                <li>
+                  <a href="#!">緊急救難</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#!">生活服務</a>
+              <ul class="nav-dropdown">
+                <li>
+                  <a href="#!">社區雲端</a>
+                </li>
+                <li>
+                  <a href="#!">生活購物</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#!">停車管理</a>
+            </li>
+            <li>
+              <a href="#!">歡迎，黃柏超</a>
+              <ul class="nav-dropdown">
+                <li>
+                  <a href="#!">登出</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </section>
+    
+    <script type="text/javascript">
+      (function($) { // Begin jQuery
+        $(function() { // DOM ready
+          // If a link has a dropdown, add sub menu toggle.
+          $('nav ul li a:not(:only-child)').click(function(e) {
+            $(this).siblings('.nav-dropdown').toggle();
+            // Close one dropdown when selecting another
+            $('.nav-dropdown').not($(this).siblings()).hide();
+            e.stopPropagation();
+          });
+          // Clicking away from dropdown will remove the dropdown class
+          $('html').click(function() {
+            $('.nav-dropdown').hide();
+          });
+          // Toggle open and close nav styles on click
+          $('#nav-toggle').click(function() {
+            $('nav ul').slideToggle();
+          });
+          // Hamburger to X toggle
+          $('#nav-toggle').on('click', function() {
+            this.classList.toggle('active');
+          });
+        }); // end DOM ready
+      })(jQuery); // end jQuery      
+    </script>
   </body>
 </html>
