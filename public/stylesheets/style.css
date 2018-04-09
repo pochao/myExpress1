@@ -1,12 +1,17 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+html {
+    position: relative;
+    min-height: 100%;
 }
-
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+}
 a {
   color: #00B7FF;
 }
-
+#about {
+    padding-top: 48px;
+}
 .footer {
     position: absolute;
     bottom: 0;
@@ -23,4 +28,3 @@ a {
     color: #efb22e;
     text-decoration: none;
 }
-
