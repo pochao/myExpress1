@@ -17,11 +17,11 @@ a {
     bottom: 0;
     width: 100%;
     /* Set the fixed height of the footer here */
-    height: 60px;
+    height: 40px;
     background-color: #507cd8;
 }
 .footer p {
-    line-height: 60px;
+    line-height: 40px;
     color: white;
 }
 .footer a {
