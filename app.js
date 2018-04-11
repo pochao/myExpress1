@@ -15,6 +15,7 @@ mongoose.connect('mongodb://' + process.env.DBUSER + ':' + process.env.DBPASSWOR
 
 var index = require('./routes/index');
 var users = require('./routes/users');
+var calendar = require('./routes/calendar');
 
 var app = express();
 
@@ -32,6 +33,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/users', users);
+app.use('/calendar', calendar);
 var routes = require('./routes/todoListRoutes'); //importing route
 routes(app); //register the route
 
