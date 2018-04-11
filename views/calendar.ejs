@@ -3,11 +3,14 @@
 <% include ./partials/head %>
 <body>
 <% include ./partials/nav %>
-<div class='page-content'>
-  <div class='page-content__container container'>
-    <div id='calendar'></div>
+<section name="jumbotron" >
+  <div class="jumbotron text-center">
+    <h1>CodePrep.io Presents</h1>
+    <p>Using EJS templating with Node.js</p>
   </div>
-</div>
+</section>
+<div id='calendar'></div>
+
 <% include ./partials/footer %>
 <% include ./partials/scripts %>
 <% include ./partials/scripts-calendar %>
