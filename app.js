@@ -6,6 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var Task = require('./models/todoListModel');
+var User = require('./models/userModel');
 
 // mongoose instance connection url connection
 mongoose.Promise = global.Promise;
@@ -34,8 +35,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use('/users', users);
 app.use('/calendar', calendar);
-var routes = require('./routes/todoListRoutes'); //importing route
-routes(app); //register the route
+var routes_todo = require('./routes/todoListRoutes'); //importing route
+routes_todo(app); //register the route
+var routes_user = require('./routes/userRoutes'); //importing route
+routes_user(app); //register the route
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
