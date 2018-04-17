@@ -53,7 +53,7 @@ exports.check_a_user = function(req, res) {
     if (err)
       res.send(err);
     if (user) {
-      req.session.name = req.body.username;
+      req.session.username = req.body.username;
       req.session.logined = true;
       res.redirect('/');
     } else {
