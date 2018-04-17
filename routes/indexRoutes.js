@@ -2,14 +2,6 @@ module.exports = function(app) {
   var todoList = require('../controllers/todoListController');
   var user = require('../controllers/userController');
 
-  // Home Page Routes
-  app.route('/')
-    .get(function(req, res){
-      res.send('ok');
-      res.end();
-      res.render('index', { title: 'Express' });
-    });
-
   // todoList Routes
   app.route('/tasks')
     .get(todoList.list_all_tasks)
