@@ -15,9 +15,6 @@ mongoose.connect('mongodb://' + process.env.DBUSER + ':' + process.env.DBPASSWOR
 });
 
 var index = require('./routes/index');
-//var users = require('./routes/users');
-//var calendar = require('./routes/calendar');
-//var login = require('./routes/login');
 
 var app = express();
 
@@ -34,12 +31,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
-//app.use('/calendar', calendar);
-//app.use('/login', login);
-// var routes_todo = require('./routes/todoListRoutes'); //importing route
-// routes_todo(app); //register the route
-// var routes_user = require('./routes/userRoutes'); //importing route
-// routes_user(app); //register the route
 var routes = require('./routes/indexRoutes'); //importing route
 routes(app); //register the route
 
