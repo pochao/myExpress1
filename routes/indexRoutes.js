@@ -5,6 +5,8 @@ module.exports = function(app) {
   // Home Page Routes
   app.route('/')
     .get(function(req, res){
+      res.send('ok');
+      res.end();
       res.render('index', { title: 'Express' });
     });
 
