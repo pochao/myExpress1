@@ -47,3 +47,12 @@ exports.delete_a_user = function(req, res) {
     res.json({ message: 'User successfully deleted' });
   });
 };
+
+exports.check_a_user = function(req, res) {
+  User.findOne ({name: req.body.username, password: req.body.password}, function(err, user) {
+    if (!user)
+      res.send('帳密錯誤');
+    res.json(user);
+  });
+  
+};

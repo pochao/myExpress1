@@ -36,5 +36,6 @@ module.exports = function(app) {
   app.route('/login')
     .get(function(req, res){
       res.render('login', { title: 'Express' });
-    });
+    })
+    .post(user.check_a_user);
 };
