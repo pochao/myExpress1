@@ -52,10 +52,13 @@ exports.check_a_user = function(req, res) {
   User.findOne ({name: req.body.username, password: req.body.password}, function(err, user) {
     if (err)
       res.send(err);
-    if (user)
+    if (user) {
+      req.session.name = req.body.username;
+      req.session.logined = true;
       res.redirect('/');
-    else
+    } else {
       res.redirect('/login');
+    }
   });
   
 };
