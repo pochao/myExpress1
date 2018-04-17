@@ -4,6 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var session = require('express-session');
 var mongoose = require('mongoose');
 var Task = require('./models/todoListModel');
 var User = require('./models/userModel');
@@ -28,7 +29,13 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(session({ secret: 'lkeng', resave: true, saveUninitialized: true, cookie: { maxAge: 14400000 }}));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(function(req, res, next) {
+  res.locals.logined = req.session.logined;
+  res.locals.username = req.session.username;
+  next();
+});
 
 app.use('/', index);
 var routes = require('./routes/indexRoutes'); //importing route
