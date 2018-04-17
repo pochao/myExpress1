@@ -54,6 +54,8 @@ exports.check_a_user = function(req, res) {
       res.send(err);
     if (user)
       res.redirect('/');
+    else
+      res.redirect('/login');
   });
   
 };
