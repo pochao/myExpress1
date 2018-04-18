@@ -37,10 +37,10 @@ a {
 }
 #viewer {
   position: absolute;
-  top: 48;
+  padding-top: 48px;
   width: 100%;
   /* Set the fixed height of the footer here */
-  height: 500px;
+  height: calc(100%-40px);
   margin: 0;
 }
   
