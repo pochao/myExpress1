@@ -1,3 +1,4 @@
+<link type="text/css" href="https://developer.api.autodesk.com/derivativeservice/v2/viewers/style.css?v=v3.3">
 <script src="https://developer.api.autodesk.com/derivativeservice/v2/viewers/three.js?v=v3.3"></script>
 <script src="https://developer.api.autodesk.com/derivativeservice/v2/viewers/viewer3D.js?v=v3.3"></script>
 
@@ -52,4 +53,6 @@
   function onItemLoadFail(errorCode) {
     console.error('onItemLoadFail() - errorCode:' + errorCode);
   }
+  
+  showModel(urn, token);
 </script>
