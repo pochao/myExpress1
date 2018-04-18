@@ -33,3 +33,8 @@ a {
   max-width: 900px;
   margin: 0 auto;
 }
+#viewer {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
