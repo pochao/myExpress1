@@ -18,16 +18,17 @@
     const rootItem = doc.getRootItem();
     const filter = { ' type' : 'geometry' , 'role' : '3d' };
     const viewables = Autodesk.Viewing.Document.getSubItemsWithProperties( rootItem, filter, true );
+    
     if( viewables. length === 0 ) {
-    console.error( 'Document contains no viewables.' );
-    return;
+      console.error( 'Document contains no viewables.' );
+      return;
     }
     
     const initialViewable = viewables[0];
     const svfUrl = doc.getViewablePath( viewables[0] );
     
     const modelOptions = {
-    sharedPropertyDbPath: doc.getPropertyDbPath()
+      sharedPropertyDbPath: doc.getPropertyDbPath()
     };
     const viewerDiv = document.getElementById( 'viewer' );
     viewer = new Autodesk.Viewing.Private.GuiViewer3D( viewerDiv );
@@ -39,7 +40,7 @@
   }
   
   function onLoadModelSuccess( model ) {
-    console. log( ' onLoadModelSuccess()!’ );
+    console. log( ' onLoadModelSuccess()! ' );
     console. log( 'Validate model loaded: ' + ( viewer.model === model ) );
     console. log( model );
   }
