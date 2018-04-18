@@ -34,7 +34,8 @@ a {
   margin: 0 auto;
 }
 #viewer {
+  padding-top: 48px;
   width: 100%;
-  height: calc(100% - 40px);
+  height: calc(90% - 40px);
   margin: 0;
 }
