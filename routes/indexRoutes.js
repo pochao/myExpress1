@@ -31,6 +31,11 @@ module.exports = function(app) {
       res.render('calendar', { title: 'Express' });
     });
 
+  // Forge 3D Model Routes
+  app.route('/forge')
+    .get(function(req, res){
+      res.render('forge', { title: 'Express' });
+    });
   
   // Login Routes
   app.route('/login')
