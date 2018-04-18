@@ -39,7 +39,7 @@ a {
   position: absolute;
   top: 48px;
   width: 100%;
-  height: calc(100vh - 10px);
+  height: calc(100vh - 30px);
   margin: 0;
 }
   
