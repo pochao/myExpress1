@@ -38,4 +38,11 @@ module.exports = function(app) {
       res.render('login', { title: 'Express' });
     })
     .post(user.check_a_user);
+    
+  // Logout Routes
+  app.route('/logout')
+    .get(function(req, res){
+      req.session.logined = false;
+      res.redirect('/');
+    });
 };
