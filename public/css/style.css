@@ -35,7 +35,8 @@ a {
 }
 #viewer {
   padding-top: 48px;
+  margin-bottom: 40px;
   width: 100%;
-  height: calc(90% - 40px);
+  height: 100%;
   margin: 0;
 }
