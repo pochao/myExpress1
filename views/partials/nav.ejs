@@ -24,15 +24,15 @@
         <li><a href="/">圖面</a></li>
         <li><a href="/">模型</a></li>
         
-        <%= if(logined){ %>
+        <% if(logined){ %>
         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"></span> <%= username %><span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a data-toggle="tab" href="#">登出</a></li>
           </ul>
         </li>
-        <%= } else { %>
+        <% } else { %>
         <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> 登入</a></li>
-        <%= } %>
+        <% } %>
 
         
         <!--
