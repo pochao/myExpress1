@@ -35,7 +35,7 @@ module.exports = function(app) {
   // Forge 3D Model Routes
   app.route('/forge')
     .get(function(req, res){
-      const token = forge.getToken();
+      var token = forge.getToken();
       console.log(token);
       res.render('forge', { token: token });
     });
