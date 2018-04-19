@@ -18,8 +18,8 @@ exports.getToken = function () {
     if (error) throw new Error(error);
     
     var ores = JSON.parse(body);
+    consol.log(ores.access_token)
     return ores.access_token;
   });
 
-  return;
 }
