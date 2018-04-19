@@ -16,9 +16,10 @@ exports.getToken = function () {
   
   request(options, function (error, response, body) {
     if (error) throw new Error(error);
-  
-    console.log(body.access_token);
+    
+    var ores = JSON.parse(body);
+    return ores.access_token;
   });
 
-
+  return;
 }
