@@ -35,7 +35,7 @@ module.exports = function(app) {
   app.route('/forge')
     .get(function(req, res){
       var token = require('../libs/forgeApi');
-      console.log(token);
+      //console.log(token);
       res.render('forge', { token: token });
     });
   
