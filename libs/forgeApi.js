@@ -1,6 +1,7 @@
 var http2 = require('https');
 
 exports.getToken = function () {
+  console.log('ok');
   var dataString = "client_id=" + process.env.FORGEID + "&client_secret=" + process.env.FORGEPASSWORD + "&grant_type=client_credentials";
 
   var headers = {
