@@ -1,7 +1,6 @@
 module.exports = function(app) {
   var todoList = require('../controllers/todoListController');
   var user = require('../controllers/userController');
-  var forge = require('../libs/forgeApi');
 
   // todoList Routes
   app.route('/tasks')
@@ -35,7 +34,7 @@ module.exports = function(app) {
   // Forge 3D Model Routes
   app.route('/forge')
     .get(function(req, res){
-      var token = forge.getToken();
+      var token = require('../libs/forgeApi');
       console.log(token);
       res.render('forge', { token: token });
     });
