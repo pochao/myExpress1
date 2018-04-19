@@ -36,7 +36,8 @@ module.exports = function(app) {
   app.route('/forge')
     .get(function(req, res){
       const token = forge.getToken();
-      res.render('forge', { token: token });
+      console.log(token);
+      //res.render('forge', { token: token });
     });
   
   // Login Routes
