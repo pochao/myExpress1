@@ -1,6 +1,7 @@
 module.exports = function(app) {
   var todoList = require('../controllers/todoListController');
   var user = require('../controllers/userController');
+  var forge = require('../libs/forgeApi');
   
   // todoList Routes
   app.route('/tasks')
@@ -32,7 +33,7 @@ module.exports = function(app) {
     });
 
   // Forge 3D Model Routes
-  app.route('/forge')
+  app.route('/forge2')
     .get(function(req, res){
       var request = require("request");
       
@@ -55,6 +56,14 @@ module.exports = function(app) {
         //console.log(ores.access_token)
         res.render('forge', { token: ores.access_token });
       });
+
+    });
+
+  app.route('/forge')
+    .get(function(req, res){
+      forge.getToken(function(token){
+        res.render('forge', { token: token });
+      });     
 
     });
   
