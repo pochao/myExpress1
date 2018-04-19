@@ -18,7 +18,7 @@ exports.getToken = function () {
     if (error) throw new Error(error);
     
     var ores = JSON.parse(body);
-    console.log(ores.access_token)
+    //console.log(ores.access_token)
     return ores.access_token;
   });
 
