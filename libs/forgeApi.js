@@ -1,7 +1,7 @@
 var http2 = require('https');
 
 exports.getToken = function () {
-  var dataString = "client_id=" + process.env.FORGEID + "&client_secret=" + process.env.FORGEPASSWORD + "&grant_type=client_credentials";
+  var dataString = "client_id=" + process.env.FORGEID + "&client_secret=" + process.env.FORGEPASSWORD + "&grant_type=client_credentials&scope=data:read";
   console.log(dataString);
   var headers = {
     "Content-Type": "application/x-www-form-urlencoded"
@@ -30,7 +30,7 @@ exports.getToken = function () {
     });
 
     res.on("end", function () {
-        //console.log(responseString);
+        console.log(responseString);
         var ores = JSON.parse(responseString);
         
         return ores.access_token;
