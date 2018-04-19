@@ -33,10 +33,10 @@ module.exports = function(app) {
     });
 
   // Forge 3D Model Routes
-  app.route('/forge')
+  app.route('/show3d')
     .get(function(req, res){
       forge.getToken(function(token){
-        res.render('forge', { token: token });
+        res.render('show3d', { token: token });
       });     
 
     });
