@@ -40,6 +40,12 @@ module.exports = function(app) {
       });     
 
     });
+
+  // Assets Routes
+  app.route('/assets')
+    .get(function(req, res){
+      res.render('assets', { title: 'Express' });
+    });
   
   // Login Routes
   app.route('/login')
