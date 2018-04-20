@@ -1,24 +1,21 @@
-<!--
-<h1><%= message %></h1>
-<h2><%= error.status %></h2>
-<pre><%= error.stack %></pre>
--->
 <!DOCTYPE html>
 <html lang="en">
-<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <body>
     <div class="container">
       <div class="row">
         <div class="span12">
           <div class="hero-unit center">
-              <h1><%= message %> <small><font face="Tahoma" color="red"><%= error.status %></font></small></h1>
+              <h1><%= message %></h1>
+              <h2><%= error.status %></h2>
+              <pre><%= error.stack %></pre>
               <br />
               
               <a href="/" class="btn btn-large btn-info"><i class="icon-home icon-white"></i> 回首頁</a>
             </div>
       </div>
     </div>
+<% include ./partials/scripts %>
 </body>
 </html>
