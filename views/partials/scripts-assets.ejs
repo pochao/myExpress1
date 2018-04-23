@@ -3,8 +3,10 @@
   $(document).ready(function() {
     $('#assetsDiv').DataTable();
     
-    $('#addAsset').click(function() {
-      window.location.href = "/asset/add";
-    });
   } );
+  
+  $('#addAsset').click(function() {
+    console.log('新增設備');
+    window.location.href = "/asset/add";
+  });
 </script>
