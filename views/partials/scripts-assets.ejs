@@ -2,5 +2,9 @@
 <script>
   $(document).ready(function() {
     $('#assetsDiv').DataTable();
+    
+    $('#addAsset').click(function() {
+      window.location.href = "/asset/add";
+    });
   } );
 </script>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<% include ./partials/head %>
+<body>
+<% include ./partials/nav %>
+<section name="jumbotron" >
+  <div class="jumbotron text-center">
+    <h3></h3>
+  </div>
+</section>
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<form role="form">
+				<div class="form-group">
+					 
+					<label for="inputDbId">
+						元件辨別碼
+					</label>
+					<input class="form-control" name="inputDbId" type="text" />
+				</div>
+				<div class="form-group">
+					 
+					<label for="inputAssetName">
+						設備名稱
+					</label>
+					<input class="form-control" name="inputAssetName" type="text" />
+				</div>
+				<div class="form-group">
+					 
+					<label for="inputAssetArea">
+						設備位置
+					</label>
+					<input class="form-control" name="inputAssetArea" type="text" />
+				</div>				
+			
+				<button type="submit" class="btn btn-primary">
+					Submit
+				</button>
+			</form>
+		</div>
+	</div>
+</div>
+
+<% include ./partials/footer %>
+<% include ./partials/scripts %>
+<% include ./partials/scripts-calendar %>
+</body>
+</html>
