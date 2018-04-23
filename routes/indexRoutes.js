@@ -50,9 +50,7 @@ module.exports = function(app) {
   // Asset Add Routes
   app.route('/asset/add')
     .get(function(req, res){
-      res.send('ok');
-      
-      //res.render('assets.add', { title: 'Express' });
+      res.render('assets_add', { title: 'Express' });
     });
   
   // Login Routes
