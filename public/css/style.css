@@ -42,4 +42,9 @@ a {
   height: calc(100vh - 90px);
   margin: 0;
 }
-  
+#ifrPdf {
+  height: calc(100vh - 100px);
+  width:100%;
+  border: 1px solid #0094ff;
+  border-radius:3px; padding-top:6px;
+}
