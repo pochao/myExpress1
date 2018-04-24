@@ -1,46 +1,23 @@
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/themes/default/style.min.css" />
 <script src="//cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/jstree.min.js"></script>
 <script>
 
   $(document).ready(function() {
-    $('#jstreeDiv').jstree({
-      "core" : {
-        "animation" : 0,
-        "check_callback" : true,
-        "themes" : { "stripes" : true },
-        'data' : {
-          'url' : function (node) {
-            return node.id === '#' ?
-              'ajax_demo_roots.json' : 'ajax_demo_children.json';
-          },
-          'data' : function (node) {
-            return { 'id' : node.id };
+    $('#jstreeDiv').jstree({ 'core' : {
+        'data' : [
+           'Simple root node',
+           {
+             'text' : 'Root node 2',
+             'state' : {
+               'opened' : true,
+               'selected' : true
+             },
+             'children' : [
+               { 'text' : 'Child 1' },
+               'Child 2'
+             ]
           }
-        }
-      },
-      "types" : {
-        "#" : {
-          "max_children" : 1,
-          "max_depth" : 4,
-          "valid_children" : ["root"]
-        },
-        "root" : {
-          "icon" : "/static/3.3.5/assets/images/tree_icon.png",
-          "valid_children" : ["default"]
-        },
-        "default" : {
-          "valid_children" : ["default","file"]
-        },
-        "file" : {
-          "icon" : "glyphicon glyphicon-file",
-          "valid_children" : []
-        }
-      },
-      "plugins" : [
-        "contextmenu", "dnd", "search",
-        "state", "types", "wholerow"
-      ]
-    });
+        ]
+    } });
     
   })
   
