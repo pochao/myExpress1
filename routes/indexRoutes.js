@@ -54,7 +54,7 @@ module.exports = function(app) {
     });
 
   // Drawing Routes
-  app.route('/asset/add')
+  app.route('/drawing')
     .get(function(req, res){
       res.render('drawing', { title: 'Express' });
     });
