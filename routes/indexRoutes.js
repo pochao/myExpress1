@@ -52,6 +52,12 @@ module.exports = function(app) {
     .get(function(req, res){
       res.render('assets_add', { title: 'Express' });
     });
+
+  // Drawing Routes
+  app.route('/asset/add')
+    .get(function(req, res){
+      res.render('drawing', { title: 'Express' });
+    });
   
   // Login Routes
   app.route('/login')
